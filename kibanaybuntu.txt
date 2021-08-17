@@ -1,0 +1,42 @@
+    1  useradd -m bhargav
+    2  passwd bhargav
+    15  vi /etc/ssh/sshd_config
+   16  systemctl restart sshd
+   17  sudo apt update
+   18  sudo apt install -y openjdk-11-jdk wget apt-transport-https curl
+   19  java -version
+   20  wget -qO - https://artifacts.elastic.co/GPG-KEY-elasticsearch | sudo apt-key add -
+   21  echo "deb https://artifacts.elastic.co/packages/oss-7.x/apt stable main" | sudo tee -a /etc/apt/sources.list.d/elastic-7.x.list
+   22  sudo apt update
+   23  sudo apt install -y elasticsearch-oss
+   24  sudo systemctl start elasticsearch
+   25  sudo systemctl enable elasticsearch
+   26  curl -X GET http://localhost:9200
+   27  sudo apt install -y logstash-oss
+   30  vi /etc/logstash/conf.d/logstash.conf
+   31  sudo systemctl start logstash
+   32  sudo systemctl enable logstash
+   33  sudo cat /var/log/logstash/logstash-plain.log
+   34  sudo apt install -y kibana-oss
+   35  sudo nano /etc/kibana/kibana.yml
+   36  sudo systemctl start kibana
+   37  sudo systemctl enable kibana
+   38  sudo nano /etc/hosts
+   39  sudo apt update
+   40  sudo apt install -y apt-transport-https
+   41  wget -qO - https://artifacts.elastic.co/GPG-KEY-elasticsearch | sudo apt-key add -
+   42  echo "deb https://artifacts.elastic.co/packages/oss-7.x/apt stable main" | sudo tee -a /etc/apt/sources.list.d/elastic-7.x.list
+   43  sudo apt update
+   44  sudo apt install -y filebeat
+   45  sudo nano /etc/kibana/kibana.yml
+   46  sudo systemctl start kibana
+   47  sudo systemctl enable kibana
+   48  sudo nano /etc/kibana/kibana.yml
+   49  sudo systemctl restart kibana
+   50  sudo nano /etc/filebeat/filebeat.yml
+   51  sudo nano /etc/hosts
+   52  sudo apt update
+   53  sudo nano /etc/filebeat/filebeat.yml
+   54  sudo systemctl start filebeat
+   55  sudo cat /var/log/syslog
+   
