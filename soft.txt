@@ -1,0 +1,8 @@
+
+
+tcpdump -vv -w tcp_04-01-2020.pcap host 10.58.160.143
+tcpdump -vv -w 27test.pcap host 10.58.160.142 -i eth0 and port 3306
+
+
+setfacl -R -m u:manohar:rwx /path
+Setfacl Permition

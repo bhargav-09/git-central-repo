@@ -1,0 +1,75 @@
+ -- name = mark
+    echo $name
+ read name 
+ echo $name
+-- val=10
+  echo $val
+
+multiple name
+read name1 name2 name3
+echo "names are $name1 , $name2 , $name3"
+
+read -p 'username' : user_var --- same line input
+echo 'username' $user_var
+
+read -sp 'paasword' : --doesnt show context
+
+read -a 'names'
+echo "Names : ${names[0]},${names[1]}"
+
+read 
+echo $REPLY --  if no variable define goes to REPLY 
+
+defining arguments as array 
+
+like
+
+
+args=("$@")
+echo "Names : ${args[0]},${args[1]}"  or echo $@
+
+
+to print no of arg = echo $#
+
+
+String Comparisons:  
+---------------------------------
+=  compare if two strings are equal
+!=  compare if two strings are not equal
+-n  evaluate if string length is greater than zero
+-z  evaluate if string length is equal to zero 
+
+Examples: 
+[ s1 = s2 ]  (true if s1 same as s2, else false)
+[ s1 != s2 ]  (true if s1 not same as s2, else false)
+[ s1 ]   (true if s1 is not empty, else false)
+[ -n s1 ]   (true if s1 has a length greater then 0, else false)
+[ -z s2 ]   (true if s2 has a length of 0, otherwise false)
+
+Number Comparisons: 
+------------------------------------
+-eq compare if two numbers are equal
+-ge compare if one number is greater than or equal to a number
+-le  compare if one number is less than or equal to a number
+-ne  compare if two numbers are not equal
+-gt  compare if one number is greater than another number
+-lt  compare if one number is less than another number 
+
+Examples: 
+[ n1 -eq n2 ]  (true if n1 same as n2, else false)
+[ n1 -ge n2 ]  (true if n1greater then or equal to n2, else false)
+[ n1 -le n2 ]  (true if n1 less then or equal to n2, else false)
+[ n1 -ne n2 ]  (true if n1 is not same as n2, else false)
+[ n1 -gt n2 ]  (true if n1 greater then n2, else false)
+[ n1 -lt n2 ]  (true if n1 less then n2, else false)
+
+
+count=10
+
+if [$count eq 10]
+then
+ echo "it is true" 
+fi
+
+
+
