@@ -1,0 +1,280 @@
+    1  timedatectl list-timezones
+    2  sudo timedatectl set-timezone Asia/Kolkata
+    3  sudo apt-get update
+    4  sudo apt-get -y install ntp
+    5  cd ~ && wget https://apt.puppetlabs.com/puppetlabs-release-pc1-trusty.deb
+    6  sudo dpkg -i puppetlabs-release-pc1-trusty.deb
+    7  sudo apt-get update
+    8  sudo apt-get -y install puppetserver
+    9  sudo vi /etc/default/puppetserver
+   10  sudo service puppetserver restart
+   11  sudo service puppetserver status
+   12  useradd -m bhargav
+   13  passwd bhargav
+   14  visudo
+   15  vi  /etc/ssh/sshd_config
+   16  service sshd restart
+   17  su bhargav
+   18  sudo service puppetserver restart
+   19  sudo service puppetserver status
+   20  cd ~ && wget https://apt.puppetlabs.com/puppetlabs-release-pc1-trusty.deb
+   21  sudo dpkg -i puppetlabs-release-pc1-trusty.deb
+   22  sudo apt-get update
+   23  sudo apt-get install puppet-agent
+   24  sudo /opt/puppetlabs/bin/puppet resource service puppet ensure=running enable=true
+   25  sudo /opt/puppetlabs/bin/puppet cert list
+   26  sudo /opt/puppetlabs/bin/puppet cert sign certi-name
+   27  sudo /opt/puppetlabs/bin/puppet cert list --all
+   28  ls
+   29  sudo service puppetserver status
+   30  vi filecreate.pp
+   31  puppet agent filecreate.pp
+   32  puppet apply filecreate.pp
+   33  vi filecreate.pp
+   34  puppet apply filecreate.pp
+   35  vi filecreate.pp
+   36  puppet apply filecreate.pp
+   37  vi filecreate.pp
+   38  puppet apply filecreate.pp
+   39  vi filecreate.pp
+   40  puppet apply filecreate.pp
+   41  puppet parser validate filecreate.pp
+   42  mkdir /opt/config.yaml
+   43  rm -rf  /opt/config.yaml
+   44  vi  /opt/config.yaml
+   45  vagrant up
+   46  apt install vagrant
+   47  vagrant up
+   48  cd /opt
+   49  vagrant init
+   50  vagrant up
+   51  vagrant up --provider=PROVIDER
+   52  ls
+   53  vagrant up --provider=config.yaml
+   54  vagrant up --provider=Vagrantfile
+   55  cd
+   56  ls
+   57  cd ../
+   58  cd
+   59  vi filecreate.pp
+   60  puppet apply filecreate.pp
+   61  vi filecreate.pp
+   62  puppet apply filecreate.pp
+   63  vi filecreate.pp
+   64  puppet apply filecreate.pp
+   65  cd /var/www
+   66  ls
+   67  cd -
+   68  vi filecreate.pp
+   69  puppet apply filecreate.pp
+   70  vi filecreate.pp
+   71  puppet apply filecreate.pp
+   72  vi filecreate.pp
+   73  puppet apply filecreate.pp
+   74  vi filecreate.pp
+   75  puppet apply filecreate.pp
+   76  vi filecreate.pp
+   77  puppet apply filecreate.pp
+   78  cd /var/www
+   79  ls
+   80  cd test-app/
+   81  ls
+   82  cd current/
+   83  ls
+   84  cd ../releases/
+   85  ;s
+   86  cd
+   87  cat filecreate.pp
+   88  vi file2.pp
+   89  puppet apply file2.pp
+   90  vi file2.pp
+   91  puppet apply file2.pp
+   92  ls
+   93*
+   94  puppet apply file2.pp
+   95  vi file2.pp
+   96  puppet apply file2.pp
+   97  vi file2.pp
+   98  cd /opt/
+   99  ls
+  100  cd
+  101  sudo nano example.com.conf
+  102  sudo openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout example.com.key -out example.com.crt -config example.com.conf
+  103  ls
+  104  sudo cp example.com /etc/ssl/certs/example.com.crt
+  105  sudo cp example.com.crt /etc/ssl/certs/example.com.crt
+  106  ls
+  107  rm -rf example.com.conf example.com.key
+  108  vi example.com.conf
+  109  sudo openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout example.com.key -out example.com.crt -config example.com.conf
+  110  ls
+  111  vi nginx.pp
+  112  puppet apply nginx.pp
+  113  vi nginx.pp
+  114  puppet apply nginx.pp
+  115  vi nginx.pp
+  116  puppet apply nginx.pp
+  117  vi nginx.pp
+  118  puppet apply nginx.pp
+  119  vi nginx.pp
+  120  puppet apply nginx.pp
+  121  vi nginx.pp
+  122  puppet apply nginx.pp
+  123  vi nginx.pp
+  124  puppet apply nginx.pp
+  125  vi nginx.pp
+  126  puppet apply nginx.pp
+  127  vi nginx.pp
+  128  puppet apply nginx.pp
+  129  vi nginx.pp
+  130  puppet apply nginx.pp
+  131  vi nginx.pp
+  132  puppet apply nginx.pp
+  133  vi nginx.pp
+  134  puppet apply nginx.pp
+  135  vi nginx.pp
+  136  puppet apply nginx.pp
+  137  vi nginx.pp
+  138  puppet apply nginx.pp
+  139  vi nginx.pp
+  140  puppet apply nginx.pp
+  141  vi nginx.pp
+  142  puppet apply nginx.pp
+  143  vi nginx.pp
+  144  puppet apply nginx.pp
+  145  vi nginx.pp
+  146  puppet apply nginx.pp
+  147  vi nginx.pp
+  148  puppet apply nginx.pp
+  149  vi nginx.pp
+  150  puppet apply nginx.pp
+  151  vi nginx.pp
+  152  puppet apply nginx.pp
+  153  vi nginx.pp
+  154  puppet apply nginx.pp
+  155  vi nginx.pp
+  156  puppet apply nginx.pp
+  157  vi nginx.pp
+  158  puppet apply nginx.pp
+  159  vi nginx.pp
+  160  puppet apply nginx.pp
+  161  vi nginx.pp
+  162  puppet apply nginx.pp
+  163  vi nginx.pp
+  164  puppet apply nginx.pp
+  165  vi nginx.pp
+  166  puppet apply nginx.pp
+  167  vi nginx.pp
+  168  puppet apply nginx.pp
+  169  vi nginx.pp
+  170  puppet apply nginx.pp
+  171  vi nginx.pp
+  172  cat nginx.pp
+  173  puppet apply nginx.pp
+  174  vi nginx.pp
+  175  puppet apply nginx.pp
+  176  vi nginx.pp
+  177  puppet apply nginx.pp
+  178  vi nginx.pp
+  179  puppet apply nginx.pp
+  180  vi nginx.pp
+  181  puppet apply nginx.pp
+  182  vi nginx.pp
+  183  ls
+  184  cd /opt/
+  185  mkdir example
+  186  cd example/
+  187  vi ngimx.pp
+  188  puppet apply ngimx.pp
+  189  vi ngimx.pp
+  190  puppet apply ngimx.pp
+  191  vi ngimx.pp
+  192  puppet apply ngimx.pp
+  193  vi ngimx.pp
+  194  ls
+  195  rm -rf ngimx.pp
+  196  vi /etc/puppet/modules/nginx/manifests/package/debian.pp:
+  197  vi nginx.pp
+  198  puppet apply nginx.pp
+  199  ls
+  200  vi nginx1.pp
+  201  puppet apply nginx1.pp
+  202  ls
+  203  rm -rf nginx1.pp
+  204  cd
+  205  cd /etc/
+  206  cd puppetlabs/
+  207  ls
+  208  cd ../puppet
+  209  sudo apt-get install puppet
+  210  cd ../puppet
+  211  ls
+  212  cd m
+  213  cd manifests/
+  214  ls
+  215  sudo puppet module install jfryman-nginx
+  216  vi /etc/puppet/manifests/nginx.pp:
+  217  vi /etc/puppet/manifests/nginx.pp
+  218  sudo puppet apply /etc/puppet/manifests/nginx.pp
+  219  vi /etc/puppet/modules/nginx/manifests/package/debian.pp:
+  220  vi /etc/puppet/modules/nginx/manifests/package/debian.pp
+  221  tar -czf jfryman-nginx-0.3.0.tar.gz puppet-nginx/
+  222  ls
+  223  cd
+  224  cd /opt/example/
+  225  ls
+  226  puppet apply nginx.pp
+  227  history
+  228  cd
+  229  ls
+  230  vi file2.pp
+  231  vi nginx.pp
+  232  puppet apply nginx.pp
+  233  puppet-agent apply nginx.pp
+  234  puppet apply nginx.pp
+  235  cd /opt/puppetlabs/bin/puppet
+  236  cd d/opt/puppetlabs/bin/
+  237  cd /opt/puppetlabs/
+  238  ls
+  239  cd puppet/
+  240  ls
+  241  cd
+  242  sudo apt-get install puppetlabs
+  243  sudo apt-get remove  puppet
+  244  puppet apply nginx.pp
+  245  sudo apt-get install puppetlabs
+  246  sudo apt-get install puppet
+  247  puppet apply nginx.pp
+  248  history
+  249  puppet apply nginx.pp
+  250  vi nginx.pp
+  251  puppet apply nginx.pp
+  252  vi nginx.pp
+  253  puppet apply nginx.pp
+  254  vi nginx.pp
+  255  puppet apply nginx.pp
+  256  vi nginx.pp
+  257  puppet apply nginx.pp
+  258  vi nginx.pp
+  259  puppet apply nginx.pp
+  260  vi nginx.pp
+  261  puppet apply nginx.pp
+  262  vi nginx.pp
+  263  puppet apply nginx.pp
+  264  history
+  265  sudo nano /etc/nginx/sites-available/default
+  266  vi kk.pp
+  267  puppet kick
+  268  puppet apply kk.pp
+  269  service nginx status
+  270  vi test.pp
+  271  puppet apply test.pp
+  272  vi test.pp
+  273  puppet apply test.pp
+  274  date -d "-7 days" +"%Y-%m-%d"
+  275  date +%u
+  276  date -d "-28 days" +"%d"
+  277  date -d "-28 days" +"%Y-%m-%d"
+  278  history
+  279  cat history
+  280  history >> file.txt
