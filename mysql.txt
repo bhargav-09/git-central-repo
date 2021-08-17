@@ -1,0 +1,74 @@
+    1  vi /etc/ssh/sshd_config
+    2  cat /etc/resolv.conf
+    3  cat /etc/os-release
+    4  useradd -m dbuser
+    5  passwd dbuser
+    6  useradd -m apparao_it
+    7  passwd apparao_it
+    8  visudo
+    9  systemctl sshd restart
+   10  systemctl  restart sshd
+   11  systemctl  status  sshd
+   12  cat /etc/os-release
+   13  ps -ef|grep -i mysql
+   14  yum install mysql57-server
+   15  wget https://dev.mysql.com/get/mysql57-community-release-el6-11.noarch.rpm
+   16  yum install mysql57-server
+   17  yum localinstall mysql57-community-release-el7-11.noarch.rpm
+   18  yum install mysql-community-server
+   19  ll
+   20  yum install mysql-community-server -y
+   21  wget https://dev.mysql.com/get/mysql57-community-release-el7-11.noarch.rpm
+   22  yum localinstall mysql57-community-release-el7-11.noarch.rpm
+   23  yum install mysql-community-server
+   24  iproute
+   25  ps -ef|grep mysql
+   26  ps -ef|grep -i mysql
+   27  df -h
+   28  mysql
+   29  mysql -uroot -p
+   30  service mysqld status
+   31  exit
+   32  systemctl start mysqld.service
+   33  servive mysqld status
+   34  service mysqld status
+   35  mysql_secure_installation
+   36  cat /var/log/mysqld.log | grep pass
+   37  mysql_secure_installation
+   38  mysql -uroot -p
+   39  exit
+   40  cd /var/lib/
+   41  du -sh mysql
+   42  df -h
+   43  top
+   44  ping devapipass.myplex.com
+   45  ping devapipaas.myplex.com
+   46  ping google.co.in
+   47  ping devapipass.myplex.com
+   48  top
+   49  df -h
+   50  history
+   51  vi /etc/my.cnf
+   52  exit
+   53  history
+   54  servive mysqld status
+   55  service mysqld status
+   56  ls -ltr /etc/localtime
+   57  mv /etc/localtime /home/apparao_it/
+   58  ln -s /etc/localtime /usr/share/zoneinfo/Asia/Kolkata
+   59  ln -s /usr/share/zoneinfo/Asia/Kolkata /etc/localtime
+   60  date
+   61    date
+   62  service mysqld status
+   63  service mysqld restart
+   64  service mysqld status
+   65  exit
+   66  date
+   67  history
+   68  servive mysqld status
+   69  service mysqld status
+   70  history
+   71  servive mysqld status
+   72  service mysqld status
+   73  df -h
+   74  fdisk -l

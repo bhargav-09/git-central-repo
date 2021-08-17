@@ -1,0 +1,78 @@
+
+git stash -- it is used to hold current work and we can do work
+git stash pop -- histiry git stash
+svn --- only remote repo internet required & git  local and remote no need of internet
+git log 
+git HEAD means show latest commit
+after add and before commit --- stag area
+
+docker build -t file
+docker run -it containername
+CMD -- can be over right
+ETRY POINT -- cannot 
+ENV -- variable 
+RUN executable command
+FROM OS
+LABEL
+workdir
+COPY
+EXPOSE
+VOLUME
+
+
+docker run --entrypoint completed command for overite withentry point
+docker run -p 8080:8081/tcp contaninername
+docker exec -it container id -- enter into conatiner
+docker logs --follow conatainer id 
+docker ps for list
+docker ps -a for stoped and running
+
+docker run -it -v hostmachine/path:container/data/path
+multiple run -- docker-compose
+docker run --volumed-fom container1 --name container2
+
+
+def gv
+
+pipeline {
+    agent any
+    parameters {
+        choice(name: 'VERSION', choices: ['1.1.0', '1.2.0', '1.3.0'], description: '')
+        booleanParam(name: 'executeTests', defaultValue: true, description: '')
+    }
+    stages {
+        stage("init") {
+            steps {
+                script {
+                   gv = load "script.groovy" 
+                }
+            }
+        }
+        stage("build") {
+            steps {
+                script {
+                    gv.buildApp()
+                }
+            }
+        }
+        stage("test") {
+            when {
+                expression {
+                    params.executeTests
+                }
+            }
+            steps {
+                script {
+                    gv.testApp()
+                }
+            }
+        }
+        stage("deploy") {
+            steps {
+                script {
+                    gv.deployApp()
+                }
+            }
+        }
+    }   
+}

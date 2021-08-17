@@ -1,0 +1,41 @@
+yum install gcc gcc-c++ make automake xinetd telnet -y
+
+###################################################################################################
+
+useradd -m nagios
+
+cd /opt
+
+wget http://pkgs.fedoraproject.org/repo/pkgs/nagios-plugins/nagios-plugins-1.4.14.tar.gz/a1835a48a777863ed2583de3c82446a9/nagios-plugins-1.4.14.tar.gz
+
+wget http://sourceforge.net/projects/nagios/files/nrpe-2.x/nrpe-2.15/nrpe-2.15.tar.gz
+
+
+tar -xvzf nrpe-2.15.tar.gz
+
+tar -xvzf nagios-plugins-1.4.14.tar.gz
+
+cd nagios-plugins-1.4.14
+
+./configure --with-nagios-user=nagios --with-nagios-group=nagios && make && make install &&
+
+chown nagios.nagios /usr/local/nagios && chown -R nagios.nagios /usr/local/nagios
+
+cd ../
+
+cd nrpe-2.15
+
+./configure --with-nagios-user=nagios --with-nagios-group=nagios --enable-ssl=no &&
+
+make all && make install-plugin && make install-daemon && make install-daemon-config && make install-xinetd
+
+echo "nrpe            5666/tcp               # nrpe" >> /etc/services
+
+sed -i 's/127.0.0.1/127.0.0.1 192.168.189.100/g' /etc/xinetd.d/nrpe
+
+/etc/init.d/xinetd start
+
+cp /opt/check_mem /usr/local/nagios/libexec/
+
+echo script excuted
+

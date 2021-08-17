@@ -1,0 +1,51 @@
+    1  python -V
+    2  ls
+    3  yum install python37
+    4  yum install python3-devel
+    5  pip3 install apache-airflow
+    6  yum install libevent-dev
+    7  yum -y install gcc gcc-c++ kernel-devel
+    8  yum -y install python-devel libxslt-devel libffi-devel openssl-devel
+    9  pip3 install apache-airflow
+   10  cd /usr/local/lib/python3.7/site-packages/
+   11  ls
+   12  cd
+   13  ls
+   14  python -V
+   15  python3.7 -V
+   16  pip3.7 install apache-airflow
+   17  export AIRFLOW_HOME='pwd' airflow_home
+   18  ls
+   19  cd /
+   20  ls
+   21  cd
+   22  pip install apache-airflow
+   23  export AIRFLOW_HOME=~/airflow
+   24  ls
+   25  cd /
+   26  ls
+   27  locate airflow
+   28  cd
+   29  locate airflow
+   30  cd /usr/local/lib
+   31  ls
+   32  cd python3.7/
+   33  ls
+   34  cd site-packages/
+   35  ls
+   36  export AIRFLOW_HOME=~/airflow
+   37  ls
+   38  cd
+   39  ls
+   40  cd /
+   41  ls
+   42  cd home/
+   43  ls
+   44  cd /root/
+   45  ls
+   46  cd /usr/local/lib/python3.7/site-packages/airflow/
+   47  ;
+   48  ls
+   49  cat settings.py
+   50  init 6
+   51  ls

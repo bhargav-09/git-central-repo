@@ -1,0 +1,30 @@
+#!/bin/bash
+echo "Hello world"
+sh "apt-get update"
+sh "sudo apt-get install apt-transport-https ca-certificates curl software-properties-common"
+sh "curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add –"
+sh "sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu  $(lsb_release -cs)  stable""
+sh "sudo apt update"
+sh "sudo apt-get install docker-ce"
+sh "docker --version"
+sh "sudo systemctl start docker"
+sh "sudo systemctl enable docker"
+sh "sudo systemctl status docker"
+sh "curl -fsSL https://test.docker.com -o test-docker.sh"
+sh "test-docker.sh"
+cat >> main.py
+
+EOF
+
+cat main.py
+
+cat >> Dockerfile
+FROM python:3.6
+RUN pip3 install --no-cache-dir numpy scipy pandas
+CMD ["python3", ./main.py]
+EOF
+
+cat Dockerfile
+docker build -t Dockerfile
+
+echo "HASH_OUTPUT Dockerfile"

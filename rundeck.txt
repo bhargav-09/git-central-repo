@@ -1,0 +1,14 @@
+OS - ubuntu 18
+install 
+java 
+
+ sudo apt install openjdk-8-jdk
+sudo apt update
+ echo "deb https://rundeck.bintray.com/rundeck-deb /" | sudo tee -a /etc/apt/sources.list.d/rundeck.list
+ curl 'https://bintray.com/user/downloadSubjectPublicKey?username=bintray' | sudo apt-key add -
+  sudo apt-get update
+  sudo apt-get install rundeck
+  sudo service rundeckd start
+ tail -f /var/log/rundeck/service.log
+
+http://localhost:4440/user/login

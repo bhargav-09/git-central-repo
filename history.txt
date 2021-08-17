@@ -1,0 +1,121 @@
+[root@PP-NMSserver-01 xinetd.d]# history
+    1  useradd -m apparao_it
+    2  passwd apparao_it
+    3  visudo
+    4  ip a
+    5  sestatus
+    6  vi /etc/sysconfig/selinux
+    7  cat /etc/issue
+    8  setenforce 0
+    9  cat /etc/issue
+   10  cd /opt/
+   11  ls
+   12  cat /etc/os-release
+   13  sestatus
+   14  yum install httpd php php-cli gcc glibc glibc-common gd gd-devel net-snmp openssl-devel wget unzip -y
+   15  useradd -m nagios
+   16  groupadd nagcmd
+   17  usermod -a -G nagcmd nagios
+   18  usermod -a -G nagcmd apache
+   19  wget https://assets.nagios.com/downloads/nagioscore/releases/nagios-4.0.8.tar.gz
+   20  wget http://www.nagios-plugins.org/download/nagios-plugins-1.4.14.tar.gz
+   21  ls
+   22  tar zxf nagios-4.0.8.tar.gz
+   23  ls
+   24  tar zxf nagios-plugins-1.4.14.tar.gz
+   25  ls
+   26  cd nagios-4.0.8
+   27  ls
+   28  ./configure --with-command-group=nagcmd
+   29  make all
+   30  yum install make
+   31  make all
+   32  make install
+   33  make install-init
+   34  make install-config
+   35  make install-commandmode
+   36  make install-webconf
+   37  htpasswd -c /usr/local/nagios/etc/htpasswd.users nagiosadmin
+   38  cd ../
+   39  ls
+   40  cd nagios-plugins-1.4.14
+   41  ls
+   42  ./configure --with-nagios-user=nagios --with-nagios-group=nagios --with-openssl
+   43  make all
+   44  make install
+   45  service httpd start
+   46  service nagios start
+   47  ls
+   48  cd ../
+   49  cd
+   50  cd /usr/local/nagios/etc/
+   51  ls
+   52  cd objects/
+   53  ls
+   54  cd
+   55  cd /opt/
+   56  ls
+   57  wget http://sourceforge.net/projects/nagios/files/nrpe-2.x/nrpe-2.15/nrpe-2.15.tar.gz
+   58  ls
+   59  wget --no-check-certificate -O nrpe.tar.gz https://github.com/NagiosEnterprises/nrpe/archive/nrpe-2.15.tar.gz
+   60  ls
+   61  ls -ltrh
+   62  rm -rf nrpe.tar.gz
+   63  ls -ltrh
+   64  wget http://sourceforge.net/projects/nagios/files/nrpe-2.x/nrpe-2.15/nrpe-2.15.tar.gz
+   65  ls
+   66  ls -ltrh
+   67  cd nrpe-2.15.tar.gz
+   68  tar -xvzf nrpe-2.15.tar.gz
+   69  ls
+   70  cd nrpe-2.15
+   71  yum install openssl-devel
+   72  ./configure
+   73  make all && make install-plugin && make install-daemon && make install-daemon-config && make install-xinetd
+   74  echo "nrpe            5666/tcp               # nrpe" >> /etc/services
+   75  sed -i 's/127.0.0.1/127.0.0.1 10.21.2.99/g' /etc/xinetd.d/nrpe
+   76  /etc/init.d/xinetd start
+   77  make install-config
+   78  systemctl enable nrpe.service
+   79  chkconfig enable nrpe.service
+   80  history
+   81  ls
+   82  cd
+   83  cd /etc/init.d/
+   84  ls
+   85  cd
+   86  cd /etc/rc.d/init.d/
+   87  ls
+   88  cd
+   89  /usr/local/nagios/libexec/check_nrpe -H localhost
+   90  cd
+   91  netstat -l | grep 5666
+   92  netstat -na | grep 5666
+   93  netstat -n
+   94  netstat -n | grep 5666
+   95  netstat -na | grep 5666
+   96  service nagios restart
+   97  netstat -na | grep 5666
+   98  history
+   99  vi /etc/xinetd.conf
+  100  cd /opt/nrpe-2.15/
+  101  yum install xinetd
+  102   make install-xinetd
+  103  /etc/init.d/xinetd start
+  104  ls
+  105  cd
+  106  cd /etc/xinetd.d/
+  107  ls
+  108  vi nrpe
+  109  sed -i 's/127.0.0.1/127.0.0.1 10.21.2.99/g' /etc/xinetd.d/nrpe
+  110  /etc/init.d/xinetd start
+  111  pwd
+  112  /etc/init.d/xinetd.d start
+  113  /etc/xinetd.d start
+  114  cd
+  115  cd /etc/init.d/
+  116  ls
+  117  cd
+  118  cd /etc/xinetd.d/
+  119  ls
+  120  vi nrpe
