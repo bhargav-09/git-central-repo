@@ -1,0 +1,9 @@
+mkdir -p /var/newdisk
+
+mount -o nouuid  /dec/xvda /var/newdisk
+
+cat /home/ec2-user/.ssh/authorized_keys >> /var/newdisk/home/ec2-user/.ssh/authorized_keys
+
+
+
+umount
