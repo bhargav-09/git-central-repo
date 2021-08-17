@@ -1,0 +1,65 @@
+
+
+pipeline {
+agentany 
+environment{
+PATH = "/opt/apache-maven-3.6.6/bin:$PATH"
+}
+stages {
+ stage ("git")
+{
+ steps{ 
+       git credentialsID : 'gitcredent',
+       url: https://github.com/repo
+}
+}
+stage('Sonarqube') {
+    environment {
+        scannerHome = tool 'SonarQubeScanner'
+    }
+    steps {
+        withSonarQubeEnv('sonarqube') {
+            sh "${scannerHome}/bin/sonar-scanner"
+        }
+        timeout(time: 10, unit: 'MINUTES') {
+            waitForQualityGate abortPipeline: true
+        }
+    }
+}
+stage("maven")
+{
+ steps{ 
+sh  "mvn clean install"
+}
+}
+###sshagent######plugins
+
+stage("deploy")
+{
+steps{ 
+sshagent([deploy_user])
+{
+sh "scp -o StrictHostKeyChecking=no webapp/*.war ec2-user@IP:/opt/apache-tomcat/webapps/"
+#### chown _R ec2-use:ec2-user /opt/apache-tomcat/
+
+}
+}
+}
+}
+
+
+
+
+FROM tomcat:8.0
+LABEL maintauner="emailID"
+CMD ["catalina.sh","run"]
+docker build -t  imagename
+docker container run --it -p 8080:8080 imageID
+
+
+FROM openjdk:16
+USER root
+ADD  apache-tomcat.tar.gz /opt/
+RUN chmod 777 -R  /opt/apachetomcat
+EXPOSE 8080
+CMD ["/opt/apachetomcat/bin/startup.sh","run"] 
